@@ -9,6 +9,7 @@
    Activity to view mapping definition elements. name: the name of the Server Activity. form: The clientside View to map the Server Activity too. namespace: The namespace id of the namespace element from which to load the view from which may be in a different assembly. style: (optional) An activity can be displayed in different styles e.g. a list of Customer view - style="browse" a Customer Details view - style="details" tabItem: (optional) TBD. default: (optional) The default Activity to Launch once authenticated e.g. <activity name="Samples.Customer" form="Views.Customers" namespace="Main" style="" tabItem="" />
    -->
    <activity name="ESA.Sales.SalesOrder" style="Browse" form="./activity.sales.salesorder.html" namespace="Main" tabItem="" default="true" />
+   <!--<activity name="ESA.Sales.SalesOrder.Order" style="Browse" form="./activity.sales.salesorder.order.html" namespace="Main" tabItem="" />-->
    <activity name="ESA.Sales.Customer" style="Browse" form="./activity.sales.customer.html" namespace="Main" tabItem=""/>
 </activities>
 

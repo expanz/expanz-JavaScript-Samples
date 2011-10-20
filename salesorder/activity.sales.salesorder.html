@@ -15,15 +15,44 @@
       console.log( 'error fn: ' + errorString );
    }
 
+   function listAllOrdersForCustomerSelector(){
+      return $('#ListAllOrdersForCustomer > [class="selected"]').attr('id');
+   }
+
    $(document).ready( function(){
 
-      $('#menu .menuitem').click(
-         function(){
+      $('#menu .menuitem').click(   function(){
             $(this).find('ul').toggle( );
-         });
+      });
       $('#menu .menuitem ul').hide();
 
    });
+
+   $(document).ExpanzLoad( function(){
+
+      $('tr').click( function(){
+         $(this).siblings().each( function(){ $(this).removeClass('selected'); } );
+         $(this).addClass('selected');
+      });
+
+      $('button#properties').click( function(){
+         $('#lightbox').html( '<div id="container" class="Activity" name="ESA.Sales.SalesOrder" initialKey="' + $('.selected').attr('id').replace(/.*_/,'') +'" ></div>' );
+
+         $.get(   'activity.sales.salesorder.properties.html',
+                  function(html){ 
+                     $('#lightbox > #container').html( html );
+                     DynamicLoadActivity();
+                  });
+         
+         
+         $('#lightbox').show('slow');
+         return false;
+      })
+   });
+
+   function closeLightbox(){
+      $('#lightbox').hide('slow');
+   }
 
 </script>
 
@@ -35,20 +64,21 @@
 
 <div id='container' class='Activity' name='ESA.Sales.SalesOrder' >
 
-	<div class='GridView' id='ListAllOrdersForCustomer' popluateMethod="ListAllOrdersForCustomer">
-	</div>
+   <div class='GridView' id='ListAllOrdersForCustomer' popluateMethod="ListAllOrdersForCustomer">
+   </div>
 
-	<div class='submit'>
-		<button	id='submit' 
-			method-name='New'
-			data-bind='click: Method'
-			onSuccess='success'
-			onError='error'>
-		    New Order 
-		</button>
-	</div>
+   <div class='submit'>
+      <button  id='properties'>Properties</button>
+      <button  id='submit' 
+               method-name='New'
+	       data-bind='click: Method'>
+	          New Order 
+	       </button>
+   </div>
 
 </div>
+
+<div id='lightbox'></div>
 
 </body>
 </html>

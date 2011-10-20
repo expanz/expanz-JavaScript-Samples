@@ -48,6 +48,7 @@ button.small {
 	margin: 200px auto;
 	width: 500px;
 	display: block;
+	background-color: white;
 }
 
 .errorContainer {
@@ -95,7 +96,8 @@ button.small {
 	left: 0px;
 	margin: 5px auto auto 5px;
 	height: 50px;
-	width: 800px;
+	z-index: 9;
+	background-color: white;
 }
 div.menuitem{
 	float: left;
@@ -140,6 +142,27 @@ div.menuitem ul li a:visited{
  * Activity
  */
 
+table {
+	border-spacing: 0px;
+	border-collapse:collapse
+}
+thead {
+	background-color: #222;
+	color: white;
+	padding: 20px 15px;
+}
+tr {
+	
+}
+tr:hover,
+tr.selected {
+	background-color: lightblue;
+}
+td {
+	padding: 10px 15px;
+	margin: 0px;
+}
+
 .submit{
 	width: 350px;
 	height: 50px;
@@ -151,9 +174,25 @@ div.menuitem ul li a:visited{
 }
 
 
+/*
+ * Lightbox
+ */
 
-
-
+#lightbox {
+	display: none;
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width:  100%;
+	z-index: 2;
+	
+	background-color: lightgrey;
+	opacity: 1;
+}
+#lightbox > #container {
+	padding: 50px 75px;
+}
 
 
 
