@@ -14,7 +14,7 @@ input {
 }
 
 button {
-	margin: 5px;
+	margin: 10px;
 	padding: 10px 35px;
 	vertical-align: middle;
 	cursor: pointer;
@@ -146,7 +146,8 @@ table {
 	border-spacing: 0px;
 	border-collapse:collapse
 }
-thead {
+thead,
+thead > tr:hover {
 	background-color: #222;
 	color: white;
 	padding: 20px 15px;
@@ -164,13 +165,12 @@ td {
 }
 
 .submit{
-	width: 350px;
-	height: 50px;
-	margin: 25px 10px 20px 10px;
+	width: 500px;
+	height: 100px;
+	margin: 25px 0px;
 }
 .submit button {
 	float: right;
-	margin-right: -10px;
 }
 
 
@@ -178,7 +178,7 @@ td {
  * Lightbox
  */
 
-#lightbox {
+#properties-container {
 	display: none;
 	
 	position: absolute;
@@ -190,7 +190,7 @@ td {
 	background-color: lightgrey;
 	opacity: 1;
 }
-#lightbox > #container {
+#properties-container > #container {
 	padding: 50px 75px;
 }
 
