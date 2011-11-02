@@ -46,7 +46,7 @@ button.small {
 
 #container {
 	margin: 200px auto;
-	width: 500px;
+	width: 960px;
 	display: block;
 	background-color: white;
 }
@@ -144,23 +144,35 @@ div.menuitem ul li a:visited{
 
 table {
 	border-spacing: 0px;
-	border-collapse:collapse
+	border-collapse:collapse;
+	width: 960px;
+	table-layout: fixed;
 }
 thead,
 thead > tr:hover {
 	background-color: #222;
-	color: white;
 	padding: 20px 15px;
-}
-tr {
 	
+	color: white;
+	font-size: 13px;
+}
+thead > tr > td {
+	padding: 10px 5px;
+}
+tbody {
+	padding: 2px 1px;
+	
+	font-size: 12px;
+}
+tbody > tr > td {
+	overflow: hidden;
 }
 tr:hover,
 tr.selected {
 	background-color: lightblue;
 }
 td {
-	padding: 10px 15px;
+	padding: 3px 5px;
 	margin: 0px;
 }
 

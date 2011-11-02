@@ -21,20 +21,22 @@
 
    $(document).ExpanzLoad( function(){
 
-      $('tr').click( function(){
+      $('tbody > tr').click( function(){
          $(this).siblings().each( function(){ $(this).removeClass('selected'); } );
          $(this).addClass('selected');
       });
+
    });
 
    function listAllOrdersForCustomerSelector(){
-      return $('#ListAllOrdersForCustomer > table > tbody > .selected').attr('id').replace(/.*_/g, '');
+      //return $('#ListAllOrdersForCustomer > table > tbody > .selected').attr('id').replace(/.*_/g, '');
+      return $('#ordersList > table > tbody > .selected').attr('id').replace(/.*_/g, '');
    }
 
    function createActivityForProperties( fields ){
       
       $.get( "./activity.sales.salesorder.properties.html", function(html){
-            $('div#properties-container').html( '<div id="container" class="Activity" name="ESA.Sales.SalesOrder" initialKey="' + listAllOrdersForCustomerSelector() +'" ></div>' );
+            $('div#properties-container').html( '<div id="container" class="Activity" name="Sales.SalesOrder" initialKey="' + listAllOrdersForCustomerSelector() +'" ></div>' );
             $('div#properties-container > #container').html( html );
             DynamicLoadActivity();
             openPropertiesBox();
@@ -49,6 +51,7 @@
       $('#properties-container').hide('slow');
    }
 
+
 </script>
 
 </head>
@@ -57,9 +60,9 @@
 <div id='menu'>
 </div>
 
-<div id='container' class='Activity' name='ESA.Sales.SalesOrder' >
+<div id='container' class='Activity' name='Sales.SalesOrder' >
 
-   <div class='GridView' id='ListAllOrdersForCustomer' popluateMethod="ListAllOrdersForCustomer">
+   <div class='GridView' id='ordersList' popluateMethod="ListMe"><!--id='ListAllOrdersForCustomer' popluateMethod="ListAllOrdersForCustomer">-->
    </div>
 
    <div class='submit'>
