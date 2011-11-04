@@ -1,32 +1,47 @@
 
 
-   <div class='textinput'>
-      <span class='label' data-bind='text: Client_LastName.label'>Last Name</span>
-      <span data-bind='text: Client_LastName.value'></span>
+   <div class="textinput">
+      <span class="label" data-bind="text: Client_LastName.label">Last Name</span>
+      <span class="value" data-bind="text: Client_LastName.value"></span>
    </div>
-   <div class='textinput'>
-      <span class='label' data-bind='text: SearchCode.label'></span>
-      <input type='text' data-bind='value: SearchCode.value' />
+   <div class="textinput">
+      <span class="label" data-bind="text: SearchCode.label"></span>
+      <input type="text" data-bind="value: SearchCode.value" />
    </div>
-   <div class='textinput'>
-      <span class='label' data-bind='text: Client_SearchCode.label'></span>
-      <input type='text' data-bind='value: Client_SearchCode.value' />
+   <div class="textinput">
+      <span class="label" data-bind="text: Client_SearchCode.label"></span>
+      <input type="text" data-bind="value: Client_SearchCode.value" />
    </div>
-   <div class='textinput'>
-      <span class='label' data-bind='text: OrderDate.label'>OrderDate</span>
-      <input type='text' data-bind='value: OrderDate.value' />
+   <div class="textinput">
+      <span class="label" data-bind="text: OrderDate.label">OrderDate</span>
+      <input type="text" data-bind="value: OrderDate.value" />
    </div>
-   <div class='textinput'>
-      <span class='label' data-bind='text: Total.label'></span>
-      <input type='text' data-bind='value: Total.value' />
+   <div class="textinput">
+      <span class="label" data-bind="text: Total.label"></span>
+      <input type="text" data-bind="value: Total.value" />
    </div>
 
-   <div class='GridView' id='orderLinesDataGrid' popluateMethod="ListMe" contextObject="Lines"></div>
+   <div class="GridView" id="orderLinesDataGrid" popluateMethod="ListMe" contextObject="Lines"></div>
 
-   <div id='submit'>
+   <div class="textinput">
+      <span class="label" data-bind="text: Lines_Item_SearchCode.label"></span>
+      <input type="text" data-bind="value: Lines_Item_SearchCode.value" />
+   </div>
+
+   <div class="textinput">
+      <span class="label" data-bind="text: Lines_Item_Name.label"></span>
+      <input type="text" data-bind="value: Lines_Item_Name.value" />
+   </div>
+
+   <div class="textinput">
+      <span class="label" data-bind="text: Lines_Item_QuantityUnit.label"></span>
+      <input type="text" data-bind="value: Lines_Item_QuantityUnit.value" />
+   </div>
+
+   <div id="submit">
       <button>Save</button>
       <button>Delete</button>
-      <button onclick='closePropertiesBox();'>Close</button>
+      <button onclick="closePropertiesBox();">Close</button>
    </div>
    
 
