@@ -34,13 +34,18 @@
    </div>
 
    <div class="textinput">
-      <span class="label" data-bind="text: Lines_Item_QuantityUnit.label"></span>
-      <input type="text" data-bind="value: Lines_Item_QuantityUnit.value" />
+      <span class="label" data-bind="text: Lines_Item_Price.label"></span>
+      <input type="text" data-bind="value: Lines_Item_Price.value" />
+   </div>
+
+   <div class="textinput">
+      <span class="label" data-bind="text: Lines_Quantity.label"></span>
+      <input type="text" data-bind="value: Lines_Quantity.value" />
    </div>
 
    <div id="submit">
-      <button>Save</button>
-      <button>Delete</button>
+      <button method-name='Save' data-bind='click: Method' contextObject='Lines'>Save</button>
+      <button onclick='alert( "SalesOrder App does not allow delete" );'>Delete</button>
       <button onclick="closePropertiesBox();">Close</button>
    </div>
    
