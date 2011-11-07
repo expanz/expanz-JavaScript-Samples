@@ -1,0 +1,39 @@
+<html>
+<head>
+
+<link href="css/common.css?1308766139" media="screen" rel="stylesheet" type="text/css" />
+
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js'></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/knockout-1.2.1.js' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/jquery.cookies.2.2.0.js'></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.js?987245745' ></script>
+
+<script type='text/javascript'>
+
+</script>
+
+</head>
+<body>
+
+<div id='menu'></div>
+
+<div id='container' class='Activity' name='Sales.Customer' >
+
+   <div class='GridView' id='customerList' popluateMethod="ListMe"></div>
+
+   <div class='submit'>
+      <button  id='properties'
+               action-name='1'
+               data-bind='click: MenuAction'
+               context-selector='customerListSelector'
+               onSuccess='createActivityForCustomer'>
+                  Properties
+               </button>
+   </div>
+
+</div>
+
+<div id='properties-container'></div>
+
+</body>
+</html>

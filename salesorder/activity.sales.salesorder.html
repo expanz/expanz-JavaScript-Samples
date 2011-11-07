@@ -29,7 +29,6 @@
    });
 
    function listAllOrdersForCustomerSelector(){
-      //return $('#ListAllOrdersForCustomer > table > tbody > .selected').attr('id').replace(/.*_/g, '');
       return $('#ordersList > table > tbody > .selected').attr('id').replace(/.*_/g, '');
    }
 
@@ -57,13 +56,11 @@
 </head>
 <body>
 
-<div id='menu'>
-</div>
+<div id='menu'></div>
 
 <div id='container' class='Activity' name='Sales.SalesOrder' >
 
-   <div class='GridView' id='ordersList' popluateMethod="ListMe"><!--id='ListAllOrdersForCustomer' popluateMethod="ListAllOrdersForCustomer">-->
-   </div>
+   <div class='GridView' id='ordersList' popluateMethod="ListMe"></div>
 
    <div class='submit'>
       <button  id='properties'
@@ -73,11 +70,6 @@
                onSuccess='createActivityForProperties'>
                   Properties
                </button>
-      <button  id='submit' 
-               method-name='New'
-	       data-bind='click: Method'>
-	          New Order 
-	       </button>
    </div>
 
 </div>
