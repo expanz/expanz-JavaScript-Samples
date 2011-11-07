@@ -15,9 +15,9 @@
          <columns>
             <column field="CustomerPhoto" width="100" />
             <column field="FullCustomerName" />
-            <column field="PersistentId" />
+            <column field="PersistentId" width="10"/>
             <column field="Phone" />
-            <column field="Email" />
+            <column field="Email" width="170"/>
             <column field="Discount" />
          </columns>
       </gridview>
