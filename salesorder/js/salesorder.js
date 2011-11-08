@@ -34,10 +34,15 @@
          openPropertiesBox();
       } else {
          $.get( "./activity.sales.customer.properties.html", function(html){
-            $('div#properties-container').append( '<div id="container" class="Activity" name="Sales.Customer" initialKey="' + customerListSelector(false) +'" ></div>' );
-            $('div#properties-container > #container').html( html );
+            $('div#properties-overlay').append( '<div class="Activity properties-container" ' +
+                                                   'name="Sales.Customer" ' +
+                                                   'initialKey="' + customerListSelector(false) +'" >' +
+                                                   html +
+                                                '</div>'
+                                                );
 
-            jQobj = $('div[initialKey=' + customerListSelector(false) + ']' );
+            jQobj = $('div#properties-overlay > div.properties-container[initialKey=' + customerListSelector(false) + ']' );
+
             DynamicLoadActivity( jQobj );
             openPropertiesBox();
          });
@@ -45,12 +50,12 @@
    }
 
    function openPropertiesBox(){
-      $('#properties-container').show('slow');
+      $('div#properties-overlay').show('slow');
    }
 
    function closePropertiesBox(){
-      $.each( $('div[initialKey=' + customerListSelector(false) + ']' ), function( i, obj ){ $(obj).hide(); } );
-      $('#properties-container').hide('slow');
+      $.each( $('div.properties-container' ), function( i, obj ){ $(obj).hide(); } );
+      $('div#properties-overlay').hide('slow');
       DynamicLoadActivity( $('#container') );
    }
 
