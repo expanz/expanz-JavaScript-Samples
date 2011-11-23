@@ -4,33 +4,34 @@
 <link href="css/common.css?1308766139" media="screen" rel="stylesheet" type="text/css" />
 
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js'></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/knockout-1.2.1.js' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/underscore-min.js' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/json2.js' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/backbone-min.js' ></script>
 <script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/jquery.cookies.2.2.0.js'></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.js?987245745' ></script>
+
+<script type='text/javascript' src='js/config.js?1308766139' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.net.js?1308766139' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.storage.js?1308766139' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.model.js?1308766139' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.view.js?1308766139' ></script>
+<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.js?1308766139' ></script>
 
 <script type='text/javascript' src='js/salesorder.js'></script>
+
 </head>
 <body>
 
-<div id='menu'></div>
+<section bind="menu" id="ExpanzMenu"></section>
 
-<div id='container' class='Activity' name='Sales.Customer' >
+<section bind="activity" name="Sales.Customer" class="container">
    
-   <div class='submit'>
-      <button  id='properties'
-               action-name='1'
-               data-bind='click: MenuAction'
-               context-selector='customerListSelector'
-               onSuccess='createActivityForCustomer'>
-                  Properties
-               </button>
+   <div bind='grid' name='customerList'>
+      <button bind="method" name="properties">Properties</button>
    </div>
 
-   <div class='GridView' id='customerList' popluateMethod="ListMe"></div>
+</section>
 
-</div>
-
-<div id='properties-overlay'></div>
+<section id='properties-overlay' />
 
 </body>
 </html>

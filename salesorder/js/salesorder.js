@@ -1,20 +1,22 @@
    $(document).ready( function(){
 
-      $('#menu .menuitem').click(   function(){
+      $('#ExpanzMenu > .menuitem').click(
+         function(){
             $(this).find('ul').toggle( );
-      });
-      $('#menu .menuitem ul').hide();
+         }
+      );
+      $('#ExpanzMenu > .menuitem > ul').hide();
 
    });
 
-   $(document).ExpanzLoad( function(){
+   //$(document).ExpanzLoad( function(){
 
-      $('tbody > tr').click( function(){
-         $(this).siblings().each( function(){ $(this).removeClass('selected'); } );
-         $(this).addClass('selected');
-      });
+   //   $('tbody > tr').click( function(){
+   //      $(this).siblings().each( function(){ $(this).removeClass('selected'); } );
+   //      $(this).addClass('selected');
+   //   });
 
-   });
+   //});
 
    var customerListSelector = function closure(){
       var selector = $('#customerList > table > tbody > .selected').attr('id').replace(/.*_/g, '');

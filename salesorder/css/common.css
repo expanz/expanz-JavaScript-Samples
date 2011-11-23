@@ -94,7 +94,7 @@ section.container {
 /*
  * Menu
  */
-#menu{
+#ExpanzMenu{
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -103,7 +103,7 @@ section.container {
 	z-index: 9;
 	background-color: white;
 }
-div.menuitem{
+#ExpanzMenu > div.menuitem{
 	float: left;
 	margin: 0px;
 	padding: 10px 25px;
@@ -117,25 +117,24 @@ div.menuitem{
 	text-decoration: none;
 	cursor: pointer;
 }
-div.menuitem:hover {
+#ExpanzMenu > div.menuitem:hover {
 	background-color: yellowgreen;
 }
 
-div.menuitem ul{
+#ExpanzMenu > div.menuitem ul{
 	list-style-type: none;
 	display: inline;
 	margin: 0px;
 }
-div.menuitem ul li{
-}
-div.menuitem ul li a{
+
+#ExpanzMenu > div.menuitem ul li a{
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 25px;
 	color: blue;
 }
-div.menuitem ul li a:visited{
+#ExpanzMenu > div.menuitem ul li a:visited{
 	color: blue;
 }
 
