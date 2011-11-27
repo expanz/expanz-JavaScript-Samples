@@ -1,63 +1,59 @@
-   $(document).ready( function(){
+$(document).ready(function () {
 
-      $('#ExpanzMenu > .menuitem').click(
-         function(){
-            $(this).find('ul').toggle( );
-         }
-      );
-      $('#ExpanzMenu > .menuitem > ul').hide();
-
+   expanz.CreateActivity($('[bind=activity]'), {
+      success: clickHandlerForGrid
    });
 
-   //$(document).ExpanzLoad( function(){
+   $('#ExpanzMenu > .menuitem').click(
 
-   //   $('tbody > tr').click( function(){
-   //      $(this).siblings().each( function(){ $(this).removeClass('selected'); } );
-   //      $(this).addClass('selected');
-   //   });
+   function () {
+      $(this).find('ul').toggle();
+   });
+   $('#ExpanzMenu > .menuitem > ul').hide();
 
-   //});
+   $('[bind=method] > [attribute=submit]').click(
 
-   var customerListSelector = function closure(){
-      var selector = $('#customerList > table > tbody > .selected').attr('id').replace(/.*_/g, '');
-      customerListSelector = function result( reset ){
-         if( reset !== false )
-            selector = $('#customerList > table > tbody > .selected').attr('id').replace(/.*_/g, '');
-         return selector;
-      };
-      return selector;
-   }
+   function () {
+      createActivityForCustomer();
+      return false;
+   });
 
-   function createActivityForCustomer( fields ){
-      var jQobj = $('div[initialKey=' + customerListSelector(false) + ']' );
-      if( jQobj.length > 0 ){
-         jQobj.show();
-         DynamicLoadActivity( jQobj );
+});
+
+function clickHandlerForGrid() {
+
+   $('[bind=activity] > [bind=grid] > table#customerList > tbody > tr').click(function () {
+      $(this).siblings().each(function () {
+         $(this).removeClass('selected');
+      });
+      $(this).addClass('selected');
+   });
+
+}
+
+function createActivityForCustomer() {
+   var key = $('table#customerList > tbody > .selected').attr('id').replace(/.*_/g, '')
+   var jQobj = $('div#properties-overlay > section[bind=activity][key=' + key + ']');
+   if (jQobj.length > 0) {
+      //jQobj.show(); // is this really necessary?
+      expanz.CreateActivity($('div#properties-overlay > div[bind=activity][key=' + key + ']'));
+      openPropertiesBox();
+   } else {
+      $.get("./activity.sales.customer.properties.html", function (html) {
+         $('div#properties-overlay').append('<section bind="activity" ' + 'name="Sales.Customer" ' + 'key="' + key + '" ' + 'class="properties-container" >' + html + '</section>');
+
+         expanz.CreateActivity($('div#properties-overlay > section[bind=activity][key=' + key + ']'));
          openPropertiesBox();
-      } else {
-         $.get( "./activity.sales.customer.properties.html", function(html){
-            $('div#properties-overlay').append( '<div class="Activity properties-container" ' +
-                                                   'name="Sales.Customer" ' +
-                                                   'initialKey="' + customerListSelector(false) +'" >' +
-                                                   html +
-                                                '</div>'
-                                                );
-
-            jQobj = $('div#properties-overlay > div.properties-container[initialKey=' + customerListSelector(false) + ']' );
-
-            DynamicLoadActivity( jQobj );
-            openPropertiesBox();
-         });
-      }
+      });
    }
+}
 
-   function openPropertiesBox(){
-      $('div#properties-overlay').show('slow');
-   }
+function openPropertiesBox() {
+   $('div#properties-overlay').show('slow');
+}
 
-   function closePropertiesBox(){
-      $.each( $('div.properties-container' ), function( i, obj ){ $(obj).hide(); } );
-      $('div#properties-overlay').hide('slow');
-      DynamicLoadActivity( $('#container') );
-   }
+function closePropertiesBox() {
+   $('div#properties-overlay').hide('slow');
+   expanz.DestroyActivity($('div#properties-overlay > section[bind=activity]'));
+}
 

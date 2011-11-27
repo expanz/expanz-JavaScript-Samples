@@ -3,44 +3,41 @@
 
 <link href="css/common.css?1308766139" media="screen" rel="stylesheet" type="text/css" />
 
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js'></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/underscore-min.js' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/json2.js' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/backbone-min.js' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/jquery.cookies.2.2.0.js'></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/underscore-min.js" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/json2.js" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/backbone-min.js" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/jquery.cookies.2.2.0.js"></script>
 
-<script type='text/javascript' src='js/config.js?1308766139' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.net.js?1308766139' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.storage.js?1308766139' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.model.js?1308766139' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.view.js?1308766139' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.js?1308766139' ></script>
-
+<script type="text/javascript" src="js/config.js?1308766139" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz.net.js?1308766139" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz.storage.js?1308766139" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz.model.js?1308766139" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz.model.data.js?1308766139" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz.view.js?1308766139" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz.factory.js?1308766139" ></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz.js?1308766139" ></script>
 <script type='text/javascript'>
 
-   $(document).ready( function(){
+$(document).ready(function () {
 
-      $('#menu .menuitem').click(
-         function(){
-            $(this).find('ul').toggle( );
-         });
-      $('#menu .menuitem ul').hide();
+   expanz.CreateActivity($('[bind=activity]'));
 
+   $('#ExpanzMenu > .menuitem').click(
+
+   function () {
+      $(this).find('ul').toggle();
    });
+   $('#ExpanzMenu > .menuitem > ul').hide();
 
+});
 </script>
-
 </head>
 <body>
 
-<section id='menu'></section>
+<section bind="menu" id="ExpanzMenu"></section>
 
 <section bind="activity" name='ESA.Sales.Calc' class='container' >
-
-   <div bind="field" name="error" class='errorContainer'>
-      <span attribute="label"></span>
-      <span attribute="value"></span>
-   </div>
 
    <div bind="field" name="Op1" class="textinput">
       <span attribute="label"></span>
@@ -56,9 +53,9 @@
       <button attribute="submit">Add</button>
    </div>
 
-   <div bind="field" name="Result" class='textinput'>
+   <div bind="field" name="Result" class="textinput">
       <span attribute="label"></span>
-      <input type='text' attribute='value' />
+      <input type='text' attribute="value" />
    </div>
 
 </section>

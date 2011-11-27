@@ -53,16 +53,15 @@ button.small {
  */
 
 section.container {
-	width: 600px;
+	width: 960px;
 	margin: 100px auto;
 	display: block;
 }
 
 #error {
-	display: none;
-	
+	display:  none;
 	width: 600px;
-	margin: 20px 0px;
+	margin: 20px auto;
 	padding: 5px 0px;
 	
 	background-color: #EEE;
@@ -75,8 +74,8 @@ section.container {
 	width: 600px;
 	text-align: left;
 }
-.submit{
-	width: 600px;
+.submit,
+.spaced {
 	height: 30px;
 	margin: 25px auto;
 }
@@ -85,7 +84,8 @@ section.container {
 	font-size: 18px;
 	width: 100px;
 }
-.value {
+.value,
+.right {
 	float: right;
 }
 
@@ -142,7 +142,7 @@ section.container {
 
 
 /*
- * Activity
+ * GridView
  */
 
 table {
@@ -211,7 +211,7 @@ td {
 
 .properties-container > .fields {
 	float: left;
-	width: 450px;
+	width: 650px;
 }
 
 .fields > div#submit {

@@ -1,33 +1,33 @@
 
    <div class="fields">
-      <div class="textinput">
-         <span class="label" data-bind="text: SearchCode.label"></span>
-         <span class="value" data-bind="text: SearchCode.value"></span>
-      </div>
-      <div class="textinput">
-         <span class="label" data-bind="text: FirstName.label"></span>
-         <input type="text" data-bind="value: FirstName.value" />
-      </div>
-      <div class="textinput">
-         <span class="label" data-bind="text: LastName.label"></span>
-         <input type="text" data-bind="value: LastName.value" />
-      </div>
-      <div class="textinput">
-         <span class="label" data-bind="text: Phone.label"></span>
-         <input type="text" data-bind="value: Phone.value" />
-      </div>
-      <div class="textinput">
-         <span class="label" data-bind="text: Email.label"></span>
-         <input type="text" data-bind="value: Email.value" />
+      <div bind="field" name="SearchCode" class="textinput">
+         <span attribute="label"></span>
+         <span attribute="value"></span>
       </div>
 
-      <div class="textinput">
-         <span class="label" data-bind="text: Discount.label"></span>
-         <input type="text" data-bind="value: Discount.value" />
+      <div bind="field" name="FirstName" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
       </div>
-
-      <div id="submit">
-         <button method-name='Save' data-bind='click: Method' contextObject='Lines'>Save Item</button>
+      <div bind="field" name="LastName" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+      <div bind="field" name="Phone" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+      <div bind="field" name="Email" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+      <div bind="field" name="Discount" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+      
+      <div bind="method" name="Save" contextObject="Lines" class="submit">
+         <button attribute="submit">Save</button>  <!-- contextObject="Lines" -->
          <button onclick='alert( "SalesOrder App does not allow delete" );'>Delete</button>
       </div>
 
@@ -36,5 +36,7 @@
       </div>
    </div>
    
-   <div class="customerphoto" data-bind="html: CustomerPhoto.value"></div> 
+   <div bind="field" name="CustomerPhoto" class="customerphoto">
+      <span attribute="value"></span>
+   </div> 
 
