@@ -6,15 +6,23 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-family: Helvetica, Arial, Sans-Serif;
+	text-align: center;
 }
 
 input {
-	font-size: 14px;
-	width: 230px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOZJREFUeNrEkzEKhDAQRWfWCOIhRLDT1sLazuva23gADyDYWKuFoogIs05AcNXVLBabJpDkzX9MEiQieDJe8HSwgYpFHMdUFAX1fU9bTqiEMOx5HnRdB+M48sxFkPduCyRJQrZtS7iua1gM5Lrruvc94OQ9XJYlGIZx38St9hb2fR8cx8H1nFDVZpi1gyDAy2v8Bi+pEIYh7s9/GAzDIK8oz/OD9j75YDBNk4SFEDLtSvvUYJ5nME0T2ULTNLAsC3RdP9U+NUjTFKqqorVY0zQQRRH+8pQpyzJq25bWXqhw+Pff+BZgAD/OvI9PFUHuAAAAAElFTkSuQmCC);
+	background-position: 100% 0%; 
+	background-repeat: no-repeat no-repeat;
+	padding: 0px 5px;
+	width: inherit;
+	margin: 5px 0px;
+	
+	line-height: 1.3em;
+	font-size: 22px;
 }
 
 button {
-	margin: 5px;
+	margin: 0px 0px 0px 10px;
 	padding: 10px 35px;
 	vertical-align: middle;
 	cursor: pointer;
@@ -44,60 +52,58 @@ button.small {
  *  Common selectors
  */
 
-#container {
-	margin: 200px auto;
-	width: 500px;
+section.container {
+	width: 960px;
+	margin: 100px auto;
 	display: block;
 }
 
-.errorContainer {
-	text-align: center;
+#error {
+	display:  none;
+	width: 600px;
+	margin: 20px auto;
+	padding: 5px 0px;
 	
-	width: 450px;
-	margin: 10px;
-	
-	background-color: #ffd56f;
-}
-.error {
-	display: block;
-	font-size: 12px;
+	background-color: #EEE;
 	color: red;
+	font-size: 1.3em;
 }
 
 .textinput {
-	margin: 20px 10px 10px 10px;
-	width: 350px;
+	margin: 0px auto;
+	width: 600px;
 	text-align: left;
 }
+.submit,
+.spaced {
+	height: 30px;
+	margin: 25px auto;
+}
+
 .label {
 	font-size: 18px;
 	width: 100px;
 }
-.textinput input {
+.value,
+.right {
 	float: right;
 }
 
-/*
- * Login Page
- */
- 
-#login {
-	width: 350px;
-	margin-top: 25px;
-}
+
 
 /*
  * Menu
  */
-#menu{
+#ExpanzMenu{
 	position: fixed;
 	top: 0px;
 	left: 0px;
 	margin: 5px auto auto 5px;
 	height: 50px;
-	width: 800px;
+	z-index: 9;
+	background-color: white;
 }
-div.menuitem{
+#ExpanzMenu > div.menuitem{
 	float: left;
 	margin: 0px;
 	padding: 10px 25px;
@@ -111,25 +117,24 @@ div.menuitem{
 	text-decoration: none;
 	cursor: pointer;
 }
-div.menuitem:hover {
+#ExpanzMenu > div.menuitem:hover {
 	background-color: yellowgreen;
 }
 
-div.menuitem ul{
+#ExpanzMenu > div.menuitem ul{
 	list-style-type: none;
 	display: inline;
 	margin: 0px;
 }
-div.menuitem ul li{
-}
-div.menuitem ul li a{
+
+#ExpanzMenu > div.menuitem ul li a{
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 25px;
 	color: blue;
 }
-div.menuitem ul li a:visited{
+#ExpanzMenu > div.menuitem ul li a:visited{
 	color: blue;
 }
 
@@ -137,25 +142,89 @@ div.menuitem ul li a:visited{
 
 
 /*
- * Activity
+ * GridView
  */
 
-.submit{
-	width: 350px;
-	height: 50px;
-	margin: 25px 10px 20px 10px;
+table {
+	border-spacing: 0px;
+	border-collapse:collapse;
+	width: 960px;
+	table-layout: fixed;
+	
+	margin: 0px;
 }
+thead,
+thead > tr:hover {
+	background-color: #222;
+	padding: 20px 15px;
+	
+	color: white;
+	font-size: 13px;
+}
+thead > tr > td {
+	padding: 10px 5px;
+}
+tbody {
+	padding: 2px 1px;
+	
+	font-size: 12px;
+}
+tbody > tr > td {
+	overflow: hidden;
+}
+tr:hover,
+tr.selected {
+	background-color: lightblue;
+}
+td {
+	padding: 3px 5px;
+	margin: 0px;
+	overflow: hidden;
+}
+
 .submit button {
 	float: right;
-	margin-right: -10px;
 }
 
 
+/*
+ * Lightbox
+ */
 
+#properties-overlay {
+	display: none;
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width:  100%;
+	height: 1000px;
+	z-index: 2;
+	
+	background-color: lightgrey;
+	opacity: 1;
+}
+.properties-container {
+	padding: 50px 75px;
+	margin: 75px 0px;
+}
 
+.properties-container > .fields {
+	float: left;
+	width: 650px;
+}
 
+.fields > div#submit {
+	margin-top: 75px;
+}
+.fields > div#close {
+	margin-top: 25px;
+}
 
-
+.properties-container > .customerphoto {
+	float: left;
+	margin-left: 0px;
+}
 
 
 

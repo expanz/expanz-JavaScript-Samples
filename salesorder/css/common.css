@@ -53,16 +53,15 @@ button.small {
  */
 
 section.container {
-	width: 600px;
+	width: 960px;
 	margin: 100px auto;
 	display: block;
 }
 
 #error {
-	display: none;
-	
+	display:  none;
 	width: 600px;
-	margin: 20px 0px;
+	margin: 20px auto;
 	padding: 5px 0px;
 	
 	background-color: #EEE;
@@ -75,8 +74,8 @@ section.container {
 	width: 600px;
 	text-align: left;
 }
-.submit{
-	width: 600px;
+.submit,
+.spaced {
 	height: 30px;
 	margin: 25px auto;
 }
@@ -85,7 +84,8 @@ section.container {
 	font-size: 18px;
 	width: 100px;
 }
-.value {
+.value,
+.right {
 	float: right;
 }
 
@@ -94,7 +94,7 @@ section.container {
 /*
  * Menu
  */
-#menu{
+#ExpanzMenu{
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -103,7 +103,7 @@ section.container {
 	z-index: 9;
 	background-color: white;
 }
-div.menuitem{
+#ExpanzMenu > div.menuitem{
 	float: left;
 	margin: 0px;
 	padding: 10px 25px;
@@ -117,25 +117,24 @@ div.menuitem{
 	text-decoration: none;
 	cursor: pointer;
 }
-div.menuitem:hover {
+#ExpanzMenu > div.menuitem:hover {
 	background-color: yellowgreen;
 }
 
-div.menuitem ul{
+#ExpanzMenu > div.menuitem ul{
 	list-style-type: none;
 	display: inline;
 	margin: 0px;
 }
-div.menuitem ul li{
-}
-div.menuitem ul li a{
+
+#ExpanzMenu > div.menuitem ul li a{
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 25px;
 	color: blue;
 }
-div.menuitem ul li a:visited{
+#ExpanzMenu > div.menuitem ul li a:visited{
 	color: blue;
 }
 
@@ -143,7 +142,7 @@ div.menuitem ul li a:visited{
 
 
 /*
- * Activity
+ * GridView
  */
 
 table {
@@ -212,7 +211,7 @@ td {
 
 .properties-container > .fields {
 	float: left;
-	width: 450px;
+	width: 650px;
 }
 
 .fields > div#submit {
