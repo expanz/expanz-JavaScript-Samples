@@ -1,7 +1,4 @@
 
-$(function(){
-
-
    window.config = {
       _URLproxy:           '../../expanz-Proxy/proxy.php',
       _URLprefix:          'http://expanzdemo.cloudapp.net:8080/esaservice.svc/restish/',
@@ -9,6 +6,5 @@ $(function(){
       _AppSite:            'SALES',
       _XMLNamespace:       'http://www.expanz.com/ESAService',
    };
-});
 
 

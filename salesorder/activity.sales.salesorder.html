@@ -2,79 +2,37 @@
 <head>
 
 <link href="css/common.css?1308766139" media="screen" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz-min.js?1308766139" ></script>
+<script type="text/javascript" src="js/config.js?1308766139" ></script>
 
-<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js'></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/knockout-1.2.1.js' ></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/jquery.cookies.2.2.0.js'></script>
-<script type='text/javascript' src='../../Expanz-JavaScript-SDK/js/expanz.js?987245745' ></script>
-
+<script type="text/javascript" src="js/salesorder.js"></script>
 <script type='text/javascript'>
-
-   $(document).ready( function(){
-
-      $('#menu .menuitem').click(   function(){
-            $(this).find('ul').toggle( );
-      });
-      $('#menu .menuitem ul').hide();
-
+$(function(){
+   $('[bind=method][name=MenuAction] > [attribute=submit]').click(
+      function () {
+         createActivity( "Sales.SalesOrder", "./activity.sales.salesorder.properties.html" );
+         return false;
    });
-
-   $(document).ExpanzLoad( function(){
-
-      $('tbody > tr').click( function(){
-         $(this).siblings().each( function(){ $(this).removeClass('selected'); } );
-         $(this).addClass('selected');
-      });
-
-   });
-
-   function listAllOrdersForCustomerSelector(){
-      return $('#ordersList > table > tbody > .selected').attr('id').replace(/.*_/g, '');
-   }
-
-   function createActivityForProperties( fields ){
-      
-      $.get( "./activity.sales.salesorder.properties.html", function(html){
-            $('div#properties-container').html( '<div id="container" class="Activity" name="Sales.SalesOrder" initialKey="' + listAllOrdersForCustomerSelector() +'" ></div>' );
-            $('div#properties-container > #container').html( html );
-            DynamicLoadActivity();
-            openPropertiesBox();
-      });
-   }
-
-   function openPropertiesBox(){
-      $('#properties-container').show('slow');
-   }
-
-   function closePropertiesBox(){
-      $('#properties-container').hide('slow');
-   }
-
-
+});
 </script>
 
 </head>
 <body>
 
-<div id='menu'></div>
+<section bind="menu" id="ExpanzMenu"></section>
 
-<div id='container' class='Activity' name='Sales.SalesOrder' >
+<section bind="activity" name="Sales.SalesOrder" class="container">
 
-   <div class='GridView' id='ordersList' popluateMethod="ListMe"></div>
-
-   <div class='submit'>
-      <button  id='properties'
-               action-name='1'
-               data-bind='click: MenuAction'
-               context-selector='listAllOrdersForCustomerSelector' 
-               onSuccess='createActivityForProperties'>
-                  Properties
-               </button>
+   <div bind="grid" name="ordersList" populateMethod="ListMe">
+      <div bind="method" name="MenuAction" class="right spaced">  
+<!-- NOTE: MenuAction is not currently being used. You find the code that creates the overlay PropertiesActivity in salesorder.js -->
+         <button attribute="submit">Properties</button>
+      </div>
    </div>
 
-</div>
+</section>
 
-<div id='properties-container'></div>
+<div id='properties-overlay'></div>
 
 </body>
 </html>

@@ -1,52 +1,61 @@
 
 
-   <div class="textinput">
-      <span class="label" data-bind="text: Client_LastName.label">Last Name</span>
-      <span class="value" data-bind="text: Client_LastName.value"></span>
-   </div>
-   <div class="textinput">
-      <span class="label" data-bind="text: SearchCode.label"></span>
-      <input type="text" data-bind="value: SearchCode.value" />
-   </div>
-   <div class="textinput">
-      <span class="label" data-bind="text: Client_SearchCode.label"></span>
-      <input type="text" data-bind="value: Client_SearchCode.value" />
-   </div>
-   <div class="textinput">
-      <span class="label" data-bind="text: OrderDate.label">OrderDate</span>
-      <input type="text" data-bind="value: OrderDate.value" />
-   </div>
-   <div class="textinput">
-      <span class="label" data-bind="text: Total.label"></span>
-      <input type="text" data-bind="value: Total.value" />
+   <div class="fields">
+      <div bind="field" name="Client_LastName" class="textinput">
+         <span attribute="label"></span>
+         <span attribute="value"></span>
+      </div>
+
+      <div bind="field" name="SearchCode" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+
+      <div bind="field" name="Client.SearchCode" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+
+      <div bind="field" name="OrderDate" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+
+      <div bind="field" name="Total" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+
+      <div bind="grid" name='ordersLinesDataGrid' populateMethod="ListMe"></div>
+
+      <div bind="field" name="Lines.Item.SearchCode" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+
+      <div bind="field" name="Lines.Item.Name" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+
+      <div bind="field" name="Lines.Item.Price" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+
+      <div bind="field" name="Lines.Quantity" class="textinput">
+         <span attribute="label"></span>
+         <input attribute="value" type="text" />
+      </div>
+
+      <div bind="method" name="Save" contextObject="Lines" class="submit">
+         <button attribute="submit">Save</button>  
+         <button onclick='alert( "SalesOrder App does not allow delete" );'>Delete</button>
+      </div>
+
+      <div id="close">
+         <button onclick="closePropertiesBox();">Close</button>
+      </div>
    </div>
 
-   <div class="GridView" id="orderLinesDataGrid" popluateMethod="ListMe" contextObject="Lines"></div>
-
-   <div class="textinput">
-      <span class="label" data-bind="text: Lines_Item_SearchCode.label"></span>
-      <input type="text" data-bind="value: Lines_Item_SearchCode.value" />
-   </div>
-
-   <div class="textinput">
-      <span class="label" data-bind="text: Lines_Item_Name.label"></span>
-      <input type="text" data-bind="value: Lines_Item_Name.value" />
-   </div>
-
-   <div class="textinput">
-      <span class="label" data-bind="text: Lines_Item_Price.label"></span>
-      <input type="text" data-bind="value: Lines_Item_Price.value" />
-   </div>
-
-   <div class="textinput">
-      <span class="label" data-bind="text: Lines_Quantity.label"></span>
-      <input type="text" data-bind="value: Lines_Quantity.value" />
-   </div>
-
-   <div id="submit">
-      <button method-name='Save' data-bind='click: Method' contextObject='Lines'>Save Item</button>
-      <button onclick='alert( "SalesOrder App does not allow delete" );'>Delete</button>
-      <button onclick="closePropertiesBox();">Close</button>
-   </div>
-   
 
