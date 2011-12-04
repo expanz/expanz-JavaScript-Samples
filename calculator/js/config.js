@@ -4,7 +4,7 @@
       _URLprefix:          'http://test.expanz.com/ESADemoService/ESAService.svc/restish/',
       _URLprefixSSL:       'https://test.expanz.com/ESADemoService/ESAService.svc/restishssl/',
       _AppSite:            'SALESAPP',
-      _XMLNamespace:       'http://www.expanz.com/ESAService',
+      _XMLNamespace:       'http://www.expanz.com/ESAService'
    };
 
 
