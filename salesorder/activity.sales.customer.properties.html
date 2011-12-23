@@ -28,7 +28,10 @@
       
       <div bind="method" name="Save" contextObject="Lines" class="submit">
          <button attribute="submit">Save</button>  
-         <button onclick='alert( "SalesOrder App does not allow delete" );'>Delete</button>
+      </div>
+
+      <div bind="method" name="DeleteConfirm" contextObject="Lines" class="submit">
+         <button attribute="submit">Delete</button>  
       </div>
 
       <div id="close">

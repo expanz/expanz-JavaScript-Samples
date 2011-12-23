@@ -3,11 +3,12 @@
 
 <link href="css/common.css?1308766139" media="screen" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/config.js"></script>
-<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/expanz-min.js"></script>
+<script type="text/javascript" src="../../Expanz-JavaScript-SDK/js/min/expanz-min.js"></script>
 
 <script type="text/javascript" src="js/salesorder.js"></script>
 <script type="text/javascript">
 $(function(){
+   // When the MenuAction button gets clicked, create a new activity to review the properties for the customer.
    $('[bind=method][name=MenuAction] > [attribute=submit]').click(
       function () {
          createActivity( "Sales.Customer", "./activity.sales.customer.properties.html" );
