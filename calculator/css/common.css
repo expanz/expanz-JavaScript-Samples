@@ -10,7 +10,6 @@ body {
 }
 
 input {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOZJREFUeNrEkzEKhDAQRWfWCOIhRLDT1sLazuva23gADyDYWKuFoogIs05AcNXVLBabJpDkzX9MEiQieDJe8HSwgYpFHMdUFAX1fU9bTqiEMOx5HnRdB+M48sxFkPduCyRJQrZtS7iua1gM5Lrruvc94OQ9XJYlGIZx38St9hb2fR8cx8H1nFDVZpi1gyDAy2v8Bi+pEIYh7s9/GAzDIK8oz/OD9j75YDBNk4SFEDLtSvvUYJ5nME0T2ULTNLAsC3RdP9U+NUjTFKqqorVY0zQQRRH+8pQpyzJq25bWXqhw+Pff+BZgAD/OvI9PFUHuAAAAAElFTkSuQmCC);
 	background-position: 100% 0%; 
 	background-repeat: no-repeat no-repeat;
 	padding: 0px 5px;
